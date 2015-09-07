@@ -1,2 +1,4 @@
 slack:
   webhook_url: https://hooks.slack.com/service/your_webhook
+  user_name: gerrit
+  icon_emoji: :gerrit:

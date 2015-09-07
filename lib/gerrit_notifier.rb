@@ -64,8 +64,8 @@ class GerritNotifier
               notifier = Slack::Notifier.new slack_config['webhook_url']
               notifier.ping(messages.join("\n\n"),
                 channel: channel,
-                username: 'gerrit',
-                icon_emoji: ':dragon_face:',
+                username: slack_config['user_name'],
+                icon_emoji: slack_config['icon_emoji'],
                 link_names: 1
               )
             end
