@@ -16,7 +16,7 @@ Sample configuration files are provided in `config`.
 
 ### slack.yml
 
-Configure your team name and Incoming Webhook integration token here.
+Configure your Incoming Webhook URL here.
 
 ### gerrit.yml
 

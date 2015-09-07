@@ -61,7 +61,7 @@ class GerritNotifier
 
           if @@buffer.size > 0 && !ENV['DEVELOPMENT']
             @@buffer.each do |channel, messages|
-              notifier = Slack::Notifier.new slack_config['team'], slack_config['token']
+              notifier = Slack::Notifier.new slack_config['webhook_url']
               notifier.ping(messages.join("\n\n"),
                 channel: channel,
                 username: 'gerrit',

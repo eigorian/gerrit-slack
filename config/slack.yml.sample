@@ -1,3 +1,2 @@
 slack:
-  team: team-name
-  token: integration-token
+  webhook_url: https://hooks.slack.com/service/your_webhook
