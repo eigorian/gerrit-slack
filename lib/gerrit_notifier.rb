@@ -147,7 +147,7 @@ class GerritNotifier
     end
 
     # New comment added
-    if update.comment_added? && update.human? && update.comment != ''
+    if update.comment_added? && update.human? && update.comment != '' && !@@notifier_config.include_ignore_string?(update.project, update.comment)
       notify_slack :comments, update, channels, "#{update.author_slack_name} has left comments on #{update.commit}: \"#{update.comment}\""
     end
 

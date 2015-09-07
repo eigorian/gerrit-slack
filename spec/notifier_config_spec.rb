@@ -22,4 +22,29 @@ describe NotifierConfig do
       end
     end
   end
+
+  describe '#include_ignore_string?' do
+    context 'when target' do
+      it 'is not include ignore string' do
+        config.include_ignore_string?('test', 'hoge').should be false
+      end
+
+      it 'is include ignore string' do
+        config.include_ignore_string?('test', 'hoge foo').should be true
+      end
+    end
+  end
+
+  describe '#ignore_strings' do
+    context 'when project' do
+      it 'is not in notification.yml' do
+        config.ignore_strings('not_exist').should == []
+      end
+
+      it 'is not in notification.yml' do
+        config.ignore_strings('test').should include 'ignore string'
+        config.ignore_strings('test').should include 'foo'
+      end
+    end
+  end
 end
